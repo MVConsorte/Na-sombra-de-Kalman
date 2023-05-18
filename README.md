@@ -18,6 +18,7 @@ O jogo combina elementos de furtividade, resolução de quebra-cabeças e aprend
 
 
 ## Contribuição
+Após finalizada o semestre 1.2023 e, portanto, o curso de Tópicos Especiais em Matemática Aplicada. Será disponibilizado para contrubições de terceiros para o projeto. Assim, poder-se-á dar novas ideias e possibilidades para o jogo, tal como ampliar horizontes e conxões ente devs.
 
 Contribuições são bem-vindas! Se você deseja contribuir para o desenvolvimento do jogo, siga estas etapas:
 
