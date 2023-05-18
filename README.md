@@ -9,20 +9,13 @@
 
 ## Descrição do Projeto
 
-Na Sombra de Kalman é um jogo de estratégia furtiva em que você lidera um grupo de invasores em uma missão perigosa para penetrar em uma fortaleza inimiga. Utilizando habilidades especiais e o poder do Filtro de Kalman, você deve evitar ser detectado pelos sensores de segurança enquanto planeja sua rota para alcançar o objetivo.
+Na Sombra de Kalman é um jogo de estratégia furtiva em que você lidera um grupo de invasores em uma missão perigosa para penetrar em uma fortaleza inimiga que utiliza filtro de kalman para detecção de invasores. Utilizando habilidades diversas e o conhecimento do funcionamento do filtro de kalman e seus sensores, você deve evitar ser detectado enquanto planeja sua rota para alcançar o objetivo.
 
-O jogo combina elementos de furtividade, resolução de quebra-cabeças e aprendizagem do Filtro de Kalman em uma experiência envolvente e desafiadora. Aprenda conceitos fundamentais do Filtro de Kalman enquanto se diverte em uma narrativa rica e atmosférica.
+O jogo combina elementos de furtividade, resolução de quebra-cabeças e aprendizagem do Filtro de Kalman em uma experiência envolvente e desafiadora, o qual o jogador tem que ser o ruído no sistema e não o contrário, permitindo uma engenharia reversa sobre o filtro e oferecendo uma perspectiva alternativa e empolgante. Aprenda conceitos fundamentais do Filtro de Kalman enquanto se diverte em uma narrativa rica e atmosférica.
 
 ## Instalação
 
-1. Clone este repositório para sua máquina local.
-   ```shell
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
 
-2. Abra o projeto no [GODOT Engine](https://godotengine.org/) (versão 3.3.4 ou superior).
-
-3. Execute o jogo dentro do GODOT.
 
 ## Contribuição
 
@@ -52,4 +45,3 @@ Contribuições são bem-vindas! Se você deseja contribuir para o desenvolvimen
 Este projeto está licenciado sob a [MIT License](https://github.com/seu-usuario/seu-repositorio/blob/main/LICENSE).
 ```
 
-Certifique-se de substituir "seu-usuario" e "seu-repositorio" pelos seus detalhes corretos do GitHub. Além disso, adicione um link ou imagem de captura de tela do gameplay para tornar o README mais visualmente atrativo.
