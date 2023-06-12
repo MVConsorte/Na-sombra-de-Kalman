@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=3 uid="uid://dr3hc0pg1s65b"]
+
+[ext_resource type="Script" path="res://Persongens/Bond/scripts/Bond.gd" id="1_igcds"]
+[ext_resource type="Texture2D" uid="uid://5citg6xxyyms" path="res://Persongens/Bond/assets/sprite_bond.png" id="2_an8em"]
+
+[sub_resource type="Animation" id="Animation_iqb3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jurwp"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6d6em"]
+resource_name = "moviment"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q2rv"]
+_data = {
+"RESET": SubResource("Animation_iqb3a"),
+"idle": SubResource("Animation_jurwp"),
+"moviment": SubResource("Animation_6d6em")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86rix"]
+radius = 6.0
+height = 12.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_34axr"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o3elo"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2hudt"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rffd0"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_h3ht3"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_34axr")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_o3elo")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_2hudt")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_rffd0")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7utc2"]
+animation = &"moviment"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4763d"]
+animation = &"moviment"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t7w4t"]
+animation = &"moviment"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b027j"]
+animation = &"moviment"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7l3s8"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7utc2")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_4763d")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_t7w4t")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_b027j")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i70e3"]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_h3ht3")
+states/idle/position = Vector2(571, 100)
+states/moviment/node = SubResource("AnimationNodeBlendSpace2D_7l3s8")
+states/moviment/position = Vector2(571, 163)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xswcf"]
+
+[node name="Bond" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["Invaders"]]
+position = Vector2(70, 43)
+script = ExtResource("1_igcds")
+_animation_tree = NodePath("AnimationTree")
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(0.289063, 0.289063)
+texture = ExtResource("2_an8em")
+hframes = 3
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7q2rv")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_86rix")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_i70e3")
+anim_player = NodePath("../Animation")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_xswcf")
+parameters/idle/blend_position = Vector2(-0.00160003, 0.0179641)
+parameters/moviment/blend_position = Vector2(0, 0)
