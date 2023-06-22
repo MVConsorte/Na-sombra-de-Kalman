@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdcy73glhq0pa"]
+[gd_scene load_steps=12 format=3 uid="uid://bdcy73glhq0pa"]
 
 [ext_resource type="Texture2D" uid="uid://defthqhyrvgp1" path="res://Map/tiles/tile_test.jpeg" id="1_wtq2c"]
 [ext_resource type="Texture2D" uid="uid://csucearj6ttoi" path="res://Map/tiles/map.jpeg" id="2_7ospa"]
@@ -3872,6 +3872,15 @@ texture = ExtResource("2_7ospa")
 sources/0 = SubResource("TileSetAtlasSource_pne6v")
 sources/1 = SubResource("TileSetAtlasSource_ophd4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukvr8"]
+size = Vector2(130, 39.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x0wi"]
+size = Vector2(31, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jomo"]
+size = Vector2(35, 93)
+
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_ra41m")
 format = 2
@@ -3884,8 +3893,30 @@ position = Vector2(407, 173)
 position = Vector2(10, 15)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(250, 92)
+position = Vector2(300, 150)
 zoom = Vector2(2, 2)
 
 [node name="sensor" parent="." instance=ExtResource("5_sfaxw")]
 position = Vector2(407, 173)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(510, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -6.25)
+shape = SubResource("RectangleShape2D_ukvr8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(145, -6.25)
+shape = SubResource("RectangleShape2D_ukvr8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-79.5, -67)
+shape = SubResource("RectangleShape2D_1x0wi")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-111.5, -129.5)
+shape = SubResource("RectangleShape2D_3jomo")
+
+[connection signal="player_origin" from="Bond" to="sensor" method="_on_bond_player_origin"]
+[connection signal="sensor_data" from="sensor" to="Eye_kalman" method="_on_sensor_sensor_data"]

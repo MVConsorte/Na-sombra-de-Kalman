@@ -5,6 +5,8 @@ var _is_detected: bool = false
 var _state_machine
 var rotation_direction = 0
 
+signal player_origin(origin)
+
 @export_category("Variables")
 @export var _move_speed: float = 64.0  #4 celulas por segundo --> velocidade de movimento
 # -- restrições de movimento (aceleração e fricção): argumentos de 0.0 (min) até 1.0 (máx) -- 
@@ -19,6 +21,7 @@ func _ready() -> void:
 	''' primeira função a ser executada no objeto '''
 	_animation_tree.active = true  #sempre que executar a animação, ativa-se o active animation
 	_state_machine = _animation_tree["parameters/playback"]
+	player_origin.emit(position)
 
 
 func _physics_process(_delta: float) -> void:

@@ -16,7 +16,7 @@ var in_real_colision = false
 func _on_sensor_area_body_entered(_body) -> void:
 	if _body.is_in_group("Invaders"):
 		_Bond_ref = _body
-
+		
 
 func _on_sensor_area_body_exited(_body) -> void:
 	if _body.is_in_group("Invaders"):
@@ -104,6 +104,12 @@ var Q = [sigma_l**2,0]         #Covariância da observação
 	# S # Covariância do estado (inicialmente - perfeita ([0,0],[0,0])
 
 	# u # aceleração (aceleração 0 => velocidade constante)
+
+func _on_sensor_sensor_data(mi, acceleration, delta_t):
+	#print("mi: ", mi)
+	#print("acceleration: ", acceleration)
+	#print("delta_t: ", delta_t)
+	dt = delta_t
 
 func predict(_mi, _S, _A, _B, _u, _R) -> void:
 	''' Função de predição '''
