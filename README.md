@@ -44,5 +44,4 @@ Contribuições são bem-vindas! Se você deseja contribuir para o desenvolvimen
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](https://github.com/seu-usuario/seu-repositorio/blob/main/LICENSE).
-```
 
