@@ -1,0 +1,77 @@
+[gd_scene load_steps=16 format=3 uid="uid://b26r7jiikxf5l"]
+
+[ext_resource type="Theme" uid="uid://btw1j0nilqsdi" path="res://Assets/Font/ui_theme.tres" id="1_5tg0i"]
+[ext_resource type="Script" path="res://UI/score.gd" id="1_atmfo"]
+[ext_resource type="Texture2D" uid="uid://d0ukr6hxm5mc0" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_up_NORMAL.png" id="1_ijn3f"]
+[ext_resource type="Texture2D" uid="uid://ddb6squhtqm0t" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_up_PRESSED.png" id="2_omv0n"]
+[ext_resource type="Texture2D" uid="uid://c84hdoyd0x8un" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_down_NORMAL.png" id="3_1dvgo"]
+[ext_resource type="Texture2D" uid="uid://b1lyv55k6330u" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_down_PRESSED.png" id="4_r5kuw"]
+[ext_resource type="Texture2D" uid="uid://d26fvpc5levt6" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_left_NORMAL.png" id="5_t2iwy"]
+[ext_resource type="Texture2D" uid="uid://7ctlxkcg414d" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_left_PRESSED.png" id="6_vkawy"]
+[ext_resource type="Texture2D" uid="uid://dc0a76ldc8smp" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_right_NORMAL.png" id="7_jhd5y"]
+[ext_resource type="Texture2D" uid="uid://c6p4nxx8krq74" path="res://Assets/Art/mini_ui_buttons/ui_buttons_arrow_right_PRESSED.png" id="8_ih1m3"]
+[ext_resource type="Texture2D" uid="uid://bqald18a44ffi" path="res://Assets/Art/bond_ready.png" id="9_5y06f"]
+[ext_resource type="Texture2D" uid="uid://dn0wn6jjqq4d5" path="res://Assets/Art/bond_used.png" id="10_nfjym"]
+[ext_resource type="AudioStream" uid="uid://dtdh53w2jhvuv" path="res://Assets/Art/Music/xDeviruchi - Decisive Battle (Loop).wav" id="11_v27mc"]
+[ext_resource type="Script" path="res://UI/Timer.gd" id="13_lj87k"]
+[ext_resource type="Script" path="res://Screens/TouchSkillButton.gd" id="15_mng6r"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="score" type="Label" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 26.0
+grow_horizontal = 0
+theme = ExtResource("1_5tg0i")
+text = "Score:    "
+script = ExtResource("1_atmfo")
+
+[node name="ui_up" type="TouchScreenButton" parent="."]
+position = Vector2(213, 477)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_ijn3f")
+texture_pressed = ExtResource("2_omv0n")
+action = "move_up"
+
+[node name="ui_down" type="TouchScreenButton" parent="."]
+position = Vector2(214, 609)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_1dvgo")
+texture_pressed = ExtResource("4_r5kuw")
+action = "move_down"
+
+[node name="ui_left" type="TouchScreenButton" parent="."]
+position = Vector2(148, 545)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_t2iwy")
+texture_pressed = ExtResource("6_vkawy")
+action = "move_left"
+
+[node name="ui_right" type="TouchScreenButton" parent="."]
+position = Vector2(278, 545)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_jhd5y")
+texture_pressed = ExtResource("8_ih1m3")
+action = "move_right"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+script = ExtResource("13_lj87k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_v27mc")
+volume_db = -30.0
+autoplay = true
+
+[node name="TouchSkillButton" type="TouchScreenButton" parent="."]
+position = Vector2(1010, 520)
+scale = Vector2(0.144531, 0.144531)
+texture_normal = ExtResource("9_5y06f")
+texture_pressed = ExtResource("10_nfjym")
+action = "hability"
+script = ExtResource("15_mng6r")

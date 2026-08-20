@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://5b5dsuoxvuw2"]
+
+[ext_resource type="Texture2D" uid="uid://q2bd16on3ygr" path="res://Assets/Art/bg.jpg" id="1_caaa1"]
+[ext_resource type="Theme" uid="uid://btw1j0nilqsdi" path="res://Assets/Font/ui_theme.tres" id="1_wy7g0"]
+[ext_resource type="PackedScene" uid="uid://dq2xp3hofb3ni" path="res://UI/play_button.tscn" id="2_8l0ed"]
+[ext_resource type="PackedScene" uid="uid://b1vl3x5scxoa4" path="res://UI/quit_button.tscn" id="3_y1mxj"]
+[ext_resource type="Script" path="res://UI/CreditsButton.gd" id="5_1kufq"]
+[ext_resource type="Script" path="res://UI/play_button.gd" id="5_vms5s"]
+[ext_resource type="AudioStream" uid="uid://8itvsmspfsgc" path="res://Assets/Art/Music/xDeviruchi - Mysterious Dungeon.wav" id="7_5pnfc"]
+[ext_resource type="Script" path="res://UI/quit_button.gd" id="7_p1o0t"]
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wy7g0")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_caaa1")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.5
+offset_top = 191.0
+offset_right = 301.5
+offset_bottom = 251.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -10
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 60
+text = "Na Sombra de Kalman"
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -133.5
+offset_right = 133.5
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayButton" parent="Menu" instance=ExtResource("2_8l0ed")]
+layout_mode = 2
+script = ExtResource("5_vms5s")
+
+[node name="CreditsButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("5_1kufq")
+
+[node name="QuitButton" parent="Menu" instance=ExtResource("3_y1mxj")]
+layout_mode = 2
+script = ExtResource("7_p1o0t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5pnfc")
+volume_db = -30.0
+autoplay = true
+
+[connection signal="button_up" from="Menu/CreditsButton" to="Menu/CreditsButton" method="_on_button_up"]
+[connection signal="button_up" from="Menu/QuitButton" to="Menu/PlayButton" method="_on_quit_button_button_up"]
+[connection signal="button_up" from="Menu/QuitButton" to="Menu/QuitButton" method="_on_button_up"]

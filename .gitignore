@@ -1,0 +1,12 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Credenciais de exportação (Senhas de Keystore, etc na Godot 4+)
+export_credentials.cfg
+
+# Arquivos de sistema operacional (lixo)
+.DS_Store
+Thumbs.db
+
+# API key
+SilentWolf.gd

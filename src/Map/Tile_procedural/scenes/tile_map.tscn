@@ -1,0 +1,197 @@
+[gd_scene load_steps=18 format=3 uid="uid://c0lt828r4k801"]
+
+[ext_resource type="Texture2D" uid="uid://crqhc7tt0raus" path="res://Map/Tile_procedural/tiles/tile_procedural_complement.png" id="2_3x7l3"]
+[ext_resource type="Texture2D" uid="uid://dkq57xruxmnfl" path="res://Map/Tile_procedural/tiles/tile_procedural.png" id="2_8eukp"]
+[ext_resource type="Script" path="res://TileMap.gd" id="3_m3ilo"]
+[ext_resource type="PackedScene" uid="uid://bv7ecg6pd3f8d" path="res://Filter_kalman/scenes/eye_kalman.tscn" id="5_l4ek0"]
+[ext_resource type="PackedScene" uid="uid://dr3hc0pg1s65b" path="res://Persongens/Bond/scripts/bond.tscn" id="6_ckb23"]
+[ext_resource type="PackedScene" uid="uid://dggh4lypee3oh" path="res://Sensor/scripts/sensor.tscn" id="7_pign2"]
+[ext_resource type="PackedScene" uid="uid://ci3r8b4jymva" path="res://Map/Tile_procedural/Castle_random/scenes/castle.tscn" id="7_uvexd"]
+[ext_resource type="PackedScene" uid="uid://b26r7jiikxf5l" path="res://Screens/hud.tscn" id="8_uian5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4j6ut"]
+resource_name = "tile_procedural"
+texture = ExtResource("2_8eukp")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6645q"]
+texture = ExtResource("2_3x7l3")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_by8py"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "noise_layer"
+custom_data_layer_0/type = 26
+sources/0 = SubResource("TileSetAtlasSource_4j6ut")
+sources/1 = SubResource("TileSetAtlasSource_6645q")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lxd8l"]
+a = Vector2(640, 360)
+b = Vector2(640, -360)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_owro5"]
+a = Vector2(-640, -360)
+b = Vector2(-640, 360)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xpio6"]
+a = Vector2(-640, -360)
+b = Vector2(640, -360)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gniq8"]
+a = Vector2(-640, 360)
+b = Vector2(640, 360)
+
+[sub_resource type="GDScript" id="GDScript_gnqio"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ua3s"]
+size = Vector2(128, 128)
+
+[node name="WorldGen" type="Node2D"]
+
+[node name="ProceduralGen" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_by8py")
+collision_visibility_mode = 1
+format = 2
+layer_0/name = "type_terrein"
+script = ExtResource("3_m3ilo")
+
+[node name="Eye_kalman" parent="ProceduralGen" instance=ExtResource("5_l4ek0")]
+
+[node name="Bond" parent="ProceduralGen" instance=ExtResource("6_ckb23")]
+
+[node name="sensor" parent="ProceduralGen" instance=ExtResource("7_pign2")]
+
+[node name="Timer" type="Timer" parent="ProceduralGen"]
+wait_time = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WorldFance" type="StaticBody2D" parent="."]
+
+[node name="right" type="CollisionShape2D" parent="WorldFance"]
+shape = SubResource("SegmentShape2D_lxd8l")
+one_way_collision_margin = 0.0
+
+[node name="left" type="CollisionShape2D" parent="WorldFance"]
+shape = SubResource("SegmentShape2D_owro5")
+
+[node name="top" type="CollisionShape2D" parent="WorldFance"]
+shape = SubResource("SegmentShape2D_xpio6")
+
+[node name="bottom" type="CollisionShape2D" parent="WorldFance"]
+shape = SubResource("SegmentShape2D_gniq8")
+
+[node name="City_generation" parent="." instance=ExtResource("7_uvexd")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="City_generation"]
+
+[node name="AreaDetect" type="Area2D" parent="City_generation/StaticBody2D"]
+position = Vector2(60, 60)
+script = SubResource("GDScript_gnqio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="City_generation/StaticBody2D/AreaDetect"]
+shape = SubResource("RectangleShape2D_1ua3s")
+
+[node name="HUD" parent="." instance=ExtResource("8_uian5")]
+
+[connection signal="ready" from="ProceduralGen/Eye_kalman" to="ProceduralGen/Eye_kalman" method="_on_ready"]
+[connection signal="player_origin" from="ProceduralGen/Bond" to="ProceduralGen/sensor" method="_on_bond_player_origin"]
+[connection signal="sensor_data" from="ProceduralGen/sensor" to="ProceduralGen/Eye_kalman" method="_on_sensor_read_data"]
+[connection signal="timeout" from="ProceduralGen/Timer" to="ProceduralGen" method="_on_timer_timeout"]
+[connection signal="body_entered" from="City_generation/StaticBody2D/AreaDetect" to="ProceduralGen" method="_on_area_detect_body_entered"]

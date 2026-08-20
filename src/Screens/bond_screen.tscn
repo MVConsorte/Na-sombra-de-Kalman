@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://b16dfohxhunaq"]
+
+[ext_resource type="Texture2D" uid="uid://d2ui8ch0momta" path="res://Assets/Art/Bond.jpg" id="1_en301"]
+[ext_resource type="Theme" uid="uid://btw1j0nilqsdi" path="res://Assets/Font/ui_theme.tres" id="1_lah2p"]
+[ext_resource type="PackedScene" uid="uid://dq2xp3hofb3ni" path="res://UI/play_button.tscn" id="2_yf178"]
+[ext_resource type="Script" path="res://UI/start_button.gd" id="4_bqiuf"]
+[ext_resource type="Script" path="res://UI/play_button.gd" id="4_j5dy4"]
+[ext_resource type="AudioStream" uid="uid://8itvsmspfsgc" path="res://Assets/Art/Music/xDeviruchi - Mysterious Dungeon.wav" id="4_jrnwc"]
+
+[node name="BondScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lah2p")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="Panel"]
+layout_mode = 1
+offset_left = 62.0
+offset_top = 106.0
+offset_right = 328.0
+offset_bottom = 372.0
+texture = ExtResource("1_en301")
+
+[node name="sla" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.0
+offset_right = 146.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.282353, 0.835294)
+text = "História do Personagem:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -793.0
+offset_top = 106.0
+offset_right = -49.0
+offset_bottom = 328.0
+grow_horizontal = 0
+text = "O grandioso espião Bernardo Oliveira Nicolau Dias, mais conhecido
+como BOND.
+Suas motivações para estar nesta empreitada são apenas
+o dinheiro e a reputação."
+
+[node name="Skill1" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 330.0
+offset_right = 1110.0
+offset_bottom = 463.0
+theme_override_colors/font_color = Color(1, 1, 0.282353, 0.835294)
+text = "Habilidade:
+Camuflagem
+"
+
+[node name="Skill2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 330.0
+offset_right = 1110.0
+offset_bottom = 463.0
+text = "
+
+Durante um curto período, BOND se torna indetectável por radares."
+
+[node name="StartButton" parent="Panel" instance=ExtResource("2_yf178")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -478.5
+offset_top = 170.5
+offset_right = -213.5
+offset_bottom = 251.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Começar a invasão!"
+script = ExtResource("4_bqiuf")
+
+[node name="RechoiceButton" parent="Panel" instance=ExtResource("2_yf178")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 146.5
+offset_top = 170.5
+offset_right = 411.5
+offset_bottom = 251.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mudar de opção."
+script = ExtResource("4_j5dy4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jrnwc")
+volume_db = -50.0
+autoplay = true

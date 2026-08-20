@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckxjhwwkrk60a"]
+
+[ext_resource type="Script" path="res://Screens/TitleButton.gd" id="1_428v7"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -291.5
+offset_right = 390.0
+offset_bottom = -112.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0.282353, 0.835294)
+theme_override_font_sizes/font_size = 30
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -199.5
+offset_right = 205.5
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Projeto elaborado por:
+Mateus Villela
+Israel
+Pedro Everton
+
+Coordenados por:
+Giovanni"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -284.5
+offset_top = -131.0
+offset_right = 284.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Artes produzidas pelo bing image creator
+Músicas por Marllon Silva (xDeviruchi)
+Botões direcionais por @clecioespindolagamedev
+Efeito sonoro e Fonte emprestados de bibliotecas de uso livre na internet "
+horizontal_alignment = 1
+
+[node name="TitleButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 43.0
+offset_right = 75.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Voltar a Tela Inical"
+script = ExtResource("1_428v7")
+
+[connection signal="button_up" from="Panel/TitleButton" to="Panel/TitleButton" method="_on_button_up"]

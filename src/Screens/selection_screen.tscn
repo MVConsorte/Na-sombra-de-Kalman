@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://dru4115e2afsk"]
+
+[ext_resource type="Theme" uid="uid://btw1j0nilqsdi" path="res://Assets/Font/ui_theme.tres" id="1_hxw3l"]
+[ext_resource type="Texture2D" uid="uid://d2ui8ch0momta" path="res://Assets/Art/Bond.jpg" id="2_pw4c5"]
+[ext_resource type="Script" path="res://UI/bond_button.gd" id="3_rvrdx"]
+[ext_resource type="Texture2D" uid="uid://b5wo2ee8ordce" path="res://Assets/Art/Hacker.jpeg" id="4_ppflt"]
+[ext_resource type="Script" path="res://UI/HackerButton.gd" id="5_o83ig"]
+[ext_resource type="Texture2D" uid="uid://c8qnajkpxvwis" path="res://Assets/Art/Atleta.png" id="6_ae7lw"]
+[ext_resource type="Script" path="res://UI/AtletaButton.gd" id="7_53745"]
+[ext_resource type="AudioStream" uid="uid://8itvsmspfsgc" path="res://Assets/Art/Music/xDeviruchi - Mysterious Dungeon.wav" id="8_fx3dl"]
+
+[node name="SelectionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hxw3l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_right = 288.0
+offset_bottom = 185.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.282353, 0.835294)
+theme_override_font_sizes/font_size = 30
+text = "Selecione seu personagem:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BondButton" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -232.0
+offset_right = 136.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_pw4c5")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_rvrdx")
+
+[node name="HackerButton" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -228.5
+offset_right = 279.0
+offset_bottom = 228.5
+grow_vertical = 2
+texture_normal = ExtResource("4_ppflt")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_o83ig")
+
+[node name="AtletaButton" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -228.5
+offset_bottom = 228.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("6_ae7lw")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_53745")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fx3dl")
+volume_db = -40.0
+autoplay = true
+
+[connection signal="button_up" from="Panel/BondButton" to="Panel/BondButton" method="_on_button_up"]
+[connection signal="button_up" from="Panel/HackerButton" to="Panel/HackerButton" method="_on_button_up"]
+[connection signal="button_up" from="Panel/AtletaButton" to="Panel/AtletaButton" method="_on_button_up"]

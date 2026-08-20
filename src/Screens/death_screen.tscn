@@ -1,0 +1,173 @@
+[gd_scene load_steps=9 format=3 uid="uid://hpn4u1ltvh6j"]
+
+[ext_resource type="Theme" uid="uid://btw1j0nilqsdi" path="res://Assets/Font/ui_theme.tres" id="1_ox5i3"]
+[ext_resource type="PackedScene" uid="uid://dq2xp3hofb3ni" path="res://UI/play_button.tscn" id="2_f2u6k"]
+[ext_resource type="Script" path="res://UI/pontuacao.gd" id="2_ft3cu"]
+[ext_resource type="AudioStream" uid="uid://corcnm5odcjld" path="res://Assets/Art/Music/failure-4-with-gong-69906.mp3" id="4_ubpue"]
+[ext_resource type="Script" path="res://UI/play_button.gd" id="5_pm1yj"]
+[ext_resource type="PackedScene" uid="uid://bv7ecg6pd3f8d" path="res://Filter_kalman/scenes/eye_kalman.tscn" id="6_5x5aq"]
+[ext_resource type="Script" path="res://UI/board_button.gd" id="6_wg3k6"]
+[ext_resource type="Script" path="res://UI/Board.gd" id="7_i3fx0"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ox5i3")
+
+[node name="Eye_kalman" parent="." instance=ExtResource("6_5x5aq")]
+position = Vector2(36, -68)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -291.5
+offset_right = 390.0
+offset_bottom = -112.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Você foi descoberto pelo Olho de Kalman."
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Pontos" type="Label" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -39.5
+offset_right = 205.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pontuação:  "
+script = ExtResource("2_ft3cu")
+
+[node name="PlayButton" parent="Panel" instance=ExtResource("2_f2u6k")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.5
+offset_top = 160.5
+offset_right = -153.5
+offset_bottom = 219.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Again"
+script = ExtResource("5_pm1yj")
+
+[node name="BoardButton" parent="Panel" instance=ExtResource("2_f2u6k")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 205.5
+offset_top = 160.5
+offset_right = 441.5
+offset_bottom = 219.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leaderboard"
+script = ExtResource("6_wg3k6")
+
+[node name="Board" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_i3fx0")
+
+[node name="InfoContainer" type="CenterContainer" parent="Panel/Board"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Info" type="Label" parent="Panel/Board/InfoContainer"]
+layout_mode = 2
+text = "Digite seu nome:"
+
+[node name="InputNameContainer" type="CenterContainer" parent="Panel/Board"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="InputName" type="LineEdit" parent="Panel/Board/InputNameContainer"]
+custom_minimum_size = Vector2(236, 50)
+layout_mode = 2
+alignment = 1
+max_length = 15
+
+[node name="ConfirmButtonContainer" type="CenterContainer" parent="Panel/Board"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="ConfirmButton" parent="Panel/Board/ConfirmButtonContainer" instance=ExtResource("2_f2u6k")]
+custom_minimum_size = Vector2(236, 59)
+layout_mode = 2
+text = "Confirmar"
+script = null
+
+[node name="Salvando" type="Label" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -39.5
+offset_right = 205.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salvando..."
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ubpue")
+volume_db = -30.0
+autoplay = true
+
+[connection signal="text_changed" from="Panel/Board/InputNameContainer/InputName" to="Panel/Board" method="_on_input_name_text_changed"]
+[connection signal="text_submitted" from="Panel/Board/InputNameContainer/InputName" to="Panel/Board" method="_on_input_name_text_submitted"]
+[connection signal="button_up" from="Panel/Board/ConfirmButtonContainer/ConfirmButton" to="Panel/Board" method="_on_confirm_button_button_up"]

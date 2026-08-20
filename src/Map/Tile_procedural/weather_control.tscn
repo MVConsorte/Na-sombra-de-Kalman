@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://WeatherControl.gd" id="1_wf4nb"]
+[ext_resource type="Texture2D" uid="uid://b8ed7fn2bm3qf" path="res://Map/Tile_procedural/tiles/Rain.png" id="2_tsbka"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tj5ph"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 100, 0)
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[node name="WeatherControl" type="StaticBody2D"]
+script = ExtResource("1_wf4nb")
+
+[node name="RainColor" type="CanvasModulate" parent="."]
+
+[node name="Rain" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_tj5ph")
+texture = ExtResource("2_tsbka")
+randomness = 0.32
+
+[node name="Timer" type="Timer" parent="."]

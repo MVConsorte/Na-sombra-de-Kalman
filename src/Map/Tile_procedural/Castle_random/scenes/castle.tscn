@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci3r8b4jymva"]
+
+[ext_resource type="Texture2D" uid="uid://bfhyfcvlrqxvw" path="res://Map/Tile_procedural/Castle_random/assets/Tile_for_city_fortress.png" id="1_u5b6o"]
+[ext_resource type="Script" path="res://Map/Tile_procedural/Castle_random/Script/Castle.gd" id="2_yuqui"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bxpu7"]
+texture = ExtResource("1_u5b6o")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vbnvv"]
+sources/1 = SubResource("TileSetAtlasSource_bxpu7")
+
+[node name="City_generation" type="TileMap"]
+tile_set = SubResource("TileSet_vbnvv")
+format = 2
+script = ExtResource("2_yuqui")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(118, 44)
+offset = Vector2(40, 48)
