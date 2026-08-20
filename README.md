@@ -1,9 +1,9 @@
 # Na sombra de Kalman
  Projeto de Tópicos Especiais em Matemática Aplicada (UnB).
 
-[![GitHub license](https://img.shields.io/github/license/seu-usuario/seu-repositorio)](https://github.com/seu-usuario/seu-repositorio/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/seu-usuario/seu-repositorio)](https://github.com/seu-usuario/seu-repositorio/issues)
-[![GitHub stars](https://img.shields.io/github/stars/seu-usuario/seu-repositorio)](https://github.com/seu-usuario/seu-repositorio/stargazers)
+[![GitHub license](https://img.shields.io/github/license/MVConsorte/Na-sombra-de-Kalman)](https://github.com/MVConsorte/Na-sombra-de-Kalman/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/MVConsorte/Na-sombra-de-Kalman)](https://github.com/MVConsorte/Na-sombra-de-Kalman/issues)
+[![GitHub stars](https://img.shields.io/github/stars/MVConsorte/Na-sombra-de-Kalman)](https://github.com/MVConsorte/Na-sombra-de-Kalman/stargazers)
 
 [![Gameplay Screenshot](https://example.com/gameplay-screenshot.png)](https://youtu.be/seu-video-link)
 
