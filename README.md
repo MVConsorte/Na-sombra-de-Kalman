@@ -13,9 +13,34 @@ Na Sombra de Kalman é um jogo de estratégia furtiva em que você lidera um gru
 
 O jogo combina elementos de furtividade, resolução de quebra-cabeças e aprendizagem do Filtro de Kalman em uma experiência envolvente e desafiadora, o qual o jogador tem que ser o ruído no sistema e não o contrário, permitindo uma engenharia reversa sobre o filtro e oferecendo uma perspectiva alternativa e empolgante. Aprenda conceitos fundamentais do Filtro de Kalman enquanto se diverte em uma narrativa rica e atmosférica.
 
+## Idealizadores/Autores
+
+<center>
+ <table style="margin-left: auto; margin-right: auto;">
+     <tr>
+         <td align="center">
+             <a href="https://github.com/MVConsorte">
+                 <img style="border-radius: 50%;" src="https://github.com/MVConsorte.png" width="150px;"/>
+                 <h5 class="text-center">Mateus V. Consorte</h5>
+             </a>
+         </td>
+         <td align="center">
+             <a href="https://github.com/IsraelThalles">
+                 <img style="border-radius: 50%;" src="https://github.com/IsraelThalles.png" width="150px;"/>
+                 <h5 class="text-center">Israel Thalles</h5>
+             </a>
+         </td>
+         <td align="center">
+             <a href="https://github.com/pedro-everton">
+                 <img style="border-radius: 50%;" src="https://github.com/pedro-everton.png" width="150px;"/>
+                 <h5 class="text-center">Pedro Everton</h5>
+             </a>
+         </td>
+     </tr>
+ </table>
+</center>
+
 ## Instalação
-
-
 
 ## Contribuição
 Após finalizada o semestre 1.2023 e, portanto, o curso de Tópicos Especiais em Matemática Aplicada. Será disponibilizado para contrubições de terceiros para o projeto. Assim, poder-se-á dar novas ideias e possibilidades para o jogo, tal como ampliar horizontes e conxões ente devs.
