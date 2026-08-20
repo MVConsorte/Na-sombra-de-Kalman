@@ -5,7 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/MVConsorte/Na-sombra-de-Kalman)](https://github.com/MVConsorte/Na-sombra-de-Kalman/issues)
 [![GitHub stars](https://img.shields.io/github/stars/MVConsorte/Na-sombra-de-Kalman)](https://github.com/MVConsorte/Na-sombra-de-Kalman/stargazers)
 
-[![Gameplay Screenshot](https://example.com/gameplay-screenshot.png)](https://youtu.be/seu-video-link)
+[![Gameplay Screenshot a ser adicionada](https://example.com/gameplay-screenshot.png)](https://youtu.be/seu-video-link)
 
 ## Descrição do Projeto
 
